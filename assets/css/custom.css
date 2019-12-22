@@ -1,0 +1,7 @@
+.navbar .navbar-menu-wrapper {
+    background: #e6e5f2;
+}
+
+.navbar .navbar-menu-wrapper .navbar-toggler i:before {
+    background: #ffffff;
+}
