@@ -41,7 +41,7 @@
 												<i class="mdi mdi-account-outline text-primary"></i>
 											</span>
 										</div>
-										<input type="text" class="form-control form-control-lg border-left-0" id="username"
+										<input type="text" class="form-control form-control-lg border-left-0" id="username" name="username"
 											placeholder="Username">
 									</div>
 								</div>
@@ -54,7 +54,7 @@
 											</span>
 										</div>
 										<input type="password" class="form-control form-control-lg border-left-0"
-											id="password" placeholder="Password">
+											id="password" name="password" placeholder="Password">
 									</div>
 								</div>
 								<!-- <div class="my-2 d-flex justify-content-between align-items-center">

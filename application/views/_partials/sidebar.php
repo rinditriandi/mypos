@@ -7,7 +7,7 @@
 	</div>
 	<ul class="nav">
 		<li class="nav-item mt-4">
-			<a class="nav-link" href="../../index.html">
+			<a class="nav-link" href="<?php echo site_url('dashboard'); ?>">
 				<i class="mdi mdi-home menu-icon"></i>
 				<span class="menu-title">Dashboard</span>
 			</a>
@@ -87,13 +87,14 @@
 				</ul>
 			</div>
 		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="../../pages/apps/gallery.html">
-				<i class="mdi mdi-account menu-icon"></i>
-				<span class="menu-title">Users</span>
-			</a>
-		</li>
-
+		<?php if ($this->session->userdata('level') == 1) { ?>
+			<li class="nav-item">
+				<a class="nav-link" href="<?php echo site_url('user'); ?>">
+					<i class="mdi mdi-account menu-icon"></i>
+					<span class="menu-title">Users</span>
+				</a>
+			</li>
+		<?php } ?>
 
 		<li class="nav-item sidebar-actions">
 			<div class="nav-link">
