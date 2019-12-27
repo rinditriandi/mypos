@@ -1,115 +1,88 @@
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
-	<div class="text-center sidebar-brand-wrapper d-flex align-items-center">
-		<a class="sidebar-brand brand-logo" href="../../index.html"><img
-				src="<?php echo base_url(); ?>assets/images/logo.svg" alt="logo" /></a>
-		<a class="sidebar-brand brand-logo-mini pl-4 pt-3" href="../../index.html"><img
-				src="../../../assets/images/logo-mini.svg" alt="logo" /></a>
-	</div>
-	<ul class="nav">
-		<li class="nav-item mt-4">
-			<a class="nav-link" href="<?php echo site_url('dashboard'); ?>">
-				<i class="mdi mdi-home menu-icon"></i>
-				<span class="menu-title">Dashboard</span>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#">
-				<i class="mdi mdi-truck menu-icon"></i>
-				<span class="menu-title">Suppliers</span>
-				<!-- <i class="menu-arrow"></i> -->
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false"
-				aria-controls="sidebar-layouts">
-				<i class="mdi mdi-account-search menu-icon"></i>
-				<span class="menu-title">Customers</span>
-				<!-- <i class="menu-arrow"></i> -->
-			</a>
-			<!-- <div class="collapse" id="sidebar-layouts">
-						<ul class="nav flex-column sub-menu">
-							<li class="nav-item"> <a class="nav-link"
-									href="../../pages/layout/compact-menu.html">Compact menu</a></li>
-							<li class="nav-item"> <a class="nav-link"
-									href="../../pages/layout/sidebar-collapsed.html">Icon menu</a></li>
-							<li class="nav-item"> <a class="nav-link"
-									href="../../pages/layout/sidebar-hidden.html">Sidebar Hidden</a></li>
-							<li class="nav-item"> <a class="nav-link"
-									href="../../pages/layout/sidebar-hidden-overlay.html">Sidebar Overlay</a></li>
-							<li class="nav-item"> <a class="nav-link"
-									href="../../pages/layout/sidebar-fixed.html">Sidebar Fixed</a></li>
-						</ul>
-					</div> -->
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-				<i class="mdi mdi-bulletin-board menu-icon"></i>
-				<span class="menu-title">Products</span>
-				<i class="menu-arrow"></i>
-			</a>
-			<div class="collapse" id="ui-basic">
-				<ul class="nav flex-column sub-menu">
-					<li class="nav-item"> <a class="nav-link"
-							href="../../pages/ui-features/accordions.html">Categories</a></li>
-					<li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Units</a></li>
-					<li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/badges.html">Items</a></li>
-				</ul>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false"
-				aria-controls="ui-advanced">
-				<i class="mdi mdi-cart menu-icon"></i>
-				<span class="menu-title">Transaction</span>
-				<i class="menu-arrow"></i>
-			</a>
-			<div class="collapse" id="ui-advanced">
-				<ul class="nav flex-column sub-menu">
-					<li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dragula.html">Sales</a></li>
-					<li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/clipboard.html">Stock In</a>
-					</li>
-					<li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/context-menu.html">Stock
-							Out</a></li>
-				</ul>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" data-toggle="collapse" href="#reports" aria-expanded="false" aria-controls="reports">
-				<i class="mdi mdi-file menu-icon"></i>
-				<span class="menu-title">Reports</span>
-				<i class="menu-arrow"></i>
-			</a>
-			<div class="collapse" id="reports">
-				<ul class="nav flex-column sub-menu">
-					<li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dragula.html">Sales</a></li>
-					<li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/clipboard.html">Stock</a>
-					</li>
-				</ul>
-			</div>
-		</li>
-		<?php if ($this->session->userdata('level') == 1) { ?>
-			<li class="nav-item">
-				<a class="nav-link" href="<?php echo site_url('user'); ?>">
-					<i class="mdi mdi-account menu-icon"></i>
-					<span class="menu-title">Users</span>
-				</a>
-			</li>
-		<?php } ?>
-
-		<li class="nav-item sidebar-actions">
-			<div class="nav-link">
-				<div class="mt-4">
-					<!-- <div class="border-none">
-								<p class="text-black">Notification</p>
-							</div> -->
-					<ul class="mt-2 pl-0">
-                    <a class="nav-link" href="../../pages/apps/gallery.html">
-				<i class="mdi mdi-logout menu-icon"></i>
-				<span class="menu-title">Logout</span>
-			</a>
+<nav class="navbar-default navbar-static-side" role="navigation">
+	<div class="sidebar-collapse">
+		<ul class="nav metismenu" id="side-menu">
+			<li class="nav-header">
+				<div class="dropdown profile-element">
+					<img alt="image" class="rounded-circle"
+						src="<?= base_url(); ?>static_files/img/profile_small.jpg" />
+					<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+						<span class="block m-t-xs font-bold"><?php echo $this->fungsi->user_login()->name ?></span>
+						<span class="text-muted text-xs block"><?php echo $this->fungsi->user_login()->username ?> <b
+								class="caret"></b></span>
+					</a>
+					<ul class="dropdown-menu animated fadeInRight m-t-xs">
+						<li><a class="dropdown-item" href="profile.html">Profile</a></li>
+						<li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
+						<li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
+						<li class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="<?= site_url('auth/logout'); ?>">Logout</a></li>
 					</ul>
 				</div>
-			</div>
-		</li>
-	</ul>
+				<div class="logo-element">
+					IN+
+				</div>
+			</li>
+			<li class="active">
+				<a href="<?= site_url('dashboard'); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
+			</li>
+			<li>
+				<a href="<?= site_url('supplier'); ?>"><i class="fa fa-truck"></i> <span class="nav-label">Suppliers</span></a>
+			</li>
+			<li>
+				<a href="layouts.html"><i class="fa fa-users"></i> <span class="nav-label">Customers</span></a>
+			</li>
+
+			<li>
+				<a href="#"><i class="fa fa-list"></i> <span class="nav-label">Products</span><span
+						class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse">
+					<li><a href="ecommerce_products_grid.html">Products grid</a></li>
+					<li><a href="ecommerce_product_list.html">Products list</a></li>
+					<li><a href="ecommerce_product.html">Product edit</a></li>
+					<li><a href="ecommerce_product_detail.html">Product detail</a></li>
+					<li><a href="ecommerce-cart.html">Cart</a></li>
+					<li><a href="ecommerce-orders.html">Orders</a></li>
+					<li><a href="ecommerce_payments.html">Credit Card form</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-list-alt"></i> <span class="nav-label">Categories</span><span
+						class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse">
+					<li><a href="ecommerce_products_grid.html">Products grid</a></li>
+					<li><a href="ecommerce_product_list.html">Products list</a></li>
+					<li><a href="ecommerce_product.html">Product edit</a></li>
+					<li><a href="ecommerce_product_detail.html">Product detail</a></li>
+					<li><a href="ecommerce-cart.html">Cart</a></li>
+					<li><a href="ecommerce-orders.html">Orders</a></li>
+					<li><a href="ecommerce_payments.html">Credit Card form</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Transaction</span><span
+						class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse">
+					<li><a href="ecommerce_products_grid.html">Sales</a></li>
+					<li><a href="ecommerce_product_list.html">Stock In</a></li>
+					<li><a href="ecommerce_product.html">Stock Out</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-file-pdf-o"></i> <span class="nav-label">Reports</span><span
+						class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse">
+					<li><a href="ecommerce_products_grid.html">Sales</a></li>
+					<li><a href="ecommerce_product_list.html">Stock</a></li>
+				</ul>
+			</li>
+			<li>
+				<?php if ($this->session->userdata('level') == 1) { ?>
+				<a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Users</span></a>
+				<?php } ?>
+
+			</li>
+
+		</ul>
+
+	</div>
 </nav>

@@ -5,7 +5,10 @@ class Supplier extends CI_Controller {
 
 	public function index()
 	{
+		// Page Title
+		$data['title'] = 'Supplier :: MyPos';
+		$data['subtitle'] = 'Supplier';
 		// $this->load->view('template');
-		$this->template->load('template', 'supplier/supplier_data');
+		$this->template->load('template', 'supplier/supplier_data', $data);
 	}
 }
